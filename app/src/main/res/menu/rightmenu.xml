@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/smenuhome"
+            android:title="Home"
+            />
+        <item android:title="Language">
+            <menu>
+                <item
+                    android:title="Affan Oromo"/>
+                <item
+                    android:title="Amharic"/>
+                <item android:title="English"/>
+            </menu>
+        </item>
+        <item
+            android:id="@+id/smenusetting"
+            android:title="Setting"/>
+        <item
+            android:id="@+id/smenuexit"
+            android:title="Exit"/>
+
+    </group>
+
+</menu>

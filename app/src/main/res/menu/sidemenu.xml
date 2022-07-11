@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+ <group android:checkableBehavior="single">
+
+     <item
+         android:id="@+id/smenuhome"
+         android:title="Home"
+         />
+     <item
+         android:id="@+id/steam"
+         android:title="Team"/>
+     <item
+         android:id="@+id/smatches"
+         android:title="Matches"/>
+     <item
+         android:id="@+id/sstand"
+         android:title="Standing"/>
+
+ </group>
+    <group android:checkableBehavior="single">
+        <item android:title="Language">
+            <menu>
+                <item
+                    android:title="Affan Oromo"/>
+                <item
+                    android:title="Amharic"/>
+                <item android:title="English"/>
+            </menu>
+        </item>
+    </group>
+</menu>
