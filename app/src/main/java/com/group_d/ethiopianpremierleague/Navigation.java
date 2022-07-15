@@ -8,22 +8,18 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.os.Bundle;
 
 import com.google.android.material.navigation.NavigationView;
+import com.group_d.ethiopianpremierleague.databinding.ActivityNavigationBinding;
 
-public class Navigation extends AppCompatActivity {
-    DrawerLayout drawerLayout;
-    Toolbar toolbar;
-    NavigationView navigationView;
-    ActionBarDrawerToggle toggle ;
+public class Navigation extends Drawerbaseactivity {
+    ActivityNavigationBinding activityNavigationBinding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_navigation);
-        drawerLayout=findViewById(R.id.drawer);
-        toolbar=findViewById(R.id.toolbar);
-        navigationView=findViewById(R.id.nav_view);
-        setSupportActionBar(toolbar);
-        toggle=new ActionBarDrawerToggle(this,drawerLayout,toolbar,0,0);
-        drawerLayout.addDrawerListener(toggle);
-        toggle.syncState();
+        activityNavigationBinding= ActivityNavigationBinding.inflate(getLayoutInflater());
+        allocateactivitytitle("Home");
+        setContentView(activityNavigationBinding.getRoot());
+
     }
+
 }

@@ -5,11 +5,18 @@
       <map>
         <entry key="..\:/My_branch/Ethiopian_Premier_league/app/src/main/res/drawable-v24/header_color.xml" value="0.1575" />
         <entry key="..\:/My_branch/Ethiopian_Premier_league/app/src/main/res/layout/activity_club_list.xml" value="0.29683698296836986" />
+        <entry key="..\:/My_branch/Ethiopian_Premier_league/app/src/main/res/layout/activity_detail_ethiopian_coffe.xml" value="0.144" />
+        <entry key="..\:/My_branch/Ethiopian_Premier_league/app/src/main/res/layout/activity_detail_jimma_city.xml" value="0.25416666666666665" />
+        <entry key="..\:/My_branch/Ethiopian_Premier_league/app/src/main/res/layout/activity_drawerbaseactivity.xml" value="0.1" />
         <entry key="..\:/My_branch/Ethiopian_Premier_league/app/src/main/res/layout/activity_main.xml" value="0.264" />
-        <entry key="..\:/My_branch/Ethiopian_Premier_league/app/src/main/res/layout/activity_navigation.xml" value="0.1" />
+        <entry key="..\:/My_branch/Ethiopian_Premier_league/app/src/main/res/layout/activity_matches.xml" value="0.1" />
+        <entry key="..\:/My_branch/Ethiopian_Premier_league/app/src/main/res/layout/activity_navigation.xml" value="0.2" />
+        <entry key="..\:/My_branch/Ethiopian_Premier_league/app/src/main/res/layout/activity_team.xml" value="0.1" />
         <entry key="..\:/My_branch/Ethiopian_Premier_league/app/src/main/res/layout/appbar_home_drawer.xml" value="0.22826086956521738" />
+        <entry key="..\:/My_branch/Ethiopian_Premier_league/app/src/main/res/layout/content_layout.xml" value="0.1" />
         <entry key="..\:/My_branch/Ethiopian_Premier_league/app/src/main/res/layout/header_bar.xml" value="0.22826086956521738" />
         <entry key="..\:/My_branch/Ethiopian_Premier_league/app/src/main/res/layout/home_content.xml" value="0.22826086956521738" />
+        <entry key="..\:/My_branch/Ethiopian_Premier_league/app/src/main/res/layout/matches_one_row.xml" value="0.264" />
         <entry key="..\:/My_branch/Ethiopian_Premier_league/app/src/main/res/menu/rightmenu.xml" value="0.264" />
         <entry key="..\:/My_branch/Ethiopian_Premier_league/app/src/main/res/menu/sidemenu.xml" value="0.25416666666666665" />
       </map>
