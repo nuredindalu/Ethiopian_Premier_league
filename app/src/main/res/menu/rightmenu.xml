@@ -1,26 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/share_menu"
+        android:icon="@drawable/share_icon"
+        android:title="Share"
+        app:showAsAction="ifRoom" />
     <group android:checkableBehavior="single">
 
         <item
             android:id="@+id/smenuhome"
-            android:title="Home"
-            />
-        <item android:title="Language">
+            android:checkable="false"
+            android:title="Home" />
+        <item
+            android:checkable="false"
+            android:title="Language">
             <menu>
-                <item
-                    android:title="Affan Oromo"/>
-                <item
-                    android:title="Amharic"/>
-                <item android:title="English"/>
+                <item android:title="Affan Oromo" />
+                <item android:title="Amharic" />
+                <item android:title="English" />
             </menu>
         </item>
         <item
             android:id="@+id/smenusetting"
-            android:title="Setting"/>
+            android:checkable="false"
+            android:title="Setting" />
         <item
             android:id="@+id/smenuexit"
-            android:title="Exit"/>
+            android:checkable="false"
+            android:title="Exit" />
 
     </group>
 

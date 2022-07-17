@@ -1,10 +1,8 @@
 package com.group_d.ethiopianpremierleague;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,18 +12,21 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import com.group_d.ethiopianpremierleague.databinding.ActivityTeamBinding;
-import com.group_d.ethiopianpremierleague.databinding.ActivityTeamBinding;
 
 public class Team extends Drawerbaseactivity {
-    String clubname[]={ "Jimma Aba Jifar","Ethiopian Coffee","Saint George","Adama City","Awassa City","Sidama Coffee","Hadiya Hossana","Welayta Dicha","Arba Minch City"};
-    int clubimage[]={R.drawable.jimma_ketema,R.drawable.ethiopian_coffe,R.drawable.saint_george,R.drawable.adama_ketema,R.drawable.awassa_ketema,R.drawable.sidaama_bunna,R.drawable.hadiya_hossana,R.drawable.welayta_dicha,R.drawable.arbaminch_ketema};
+    String clubname[]={ "Adama Ketema FC","Addis Ababa Ketema FC","Arba Minch Ketema FC","Bahir Dar Ketema FC","Dire Dawa Ketema SC","Ethiopia Bunna SC","Fasil Kenema FC","Hadiya Hossana FC","Hawassa Ketema FC","Jimma Aba Jifar FC","Kidus Giorgis SA","Mekelakeya SC","Sebeta Ketema FC","Sidama Bunna SC","Wolaita Dicha SC","Wolkite Ketema SC"};
+    int clubimage[]={R.drawable.adama_ketema,R.drawable.addis_ababa_kenema,R.drawable.arbaminch_ketema,R.drawable.bahir_dar_kenema,R.drawable.dire_dawa_kenema,R.drawable.ethiopian_coffe,R.drawable.fasil_kenema,R.drawable.hadiya_hossana,R.drawable.hawassa_ketema,R.drawable.jimma_ketema,R.drawable.saint_george,R.drawable.mekelakeyia,R.drawable.sebeta_kenema,R.drawable.sidaama_bunna,R.drawable.welayta_dicha,R.drawable.welkite_kenema};
    ListView listView;
+    ArrayAdapter<String> arrayAdapter;
+
    ActivityTeamBinding activityTeamBinding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,10 +34,11 @@ public class Team extends Drawerbaseactivity {
         activityTeamBinding = ActivityTeamBinding.inflate(getLayoutInflater());
         setContentView(activityTeamBinding.getRoot());
         allocateactivitytitle("Team");
-
-       listView =(ListView) findViewById(R.id.clublistedview);
-        Adapterclass adapterclass= new Adapterclass(getApplication(),clubname,clubimage);
-        listView.setAdapter(adapterclass);
+        listView =(ListView) findViewById(R.id.clublistedview);
+        arrayAdapter= new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,android.R.id.text1,clubname);
+       listView.setAdapter(arrayAdapter);
+         Adapterclass adapterclass= new Adapterclass(getApplication(),clubname,clubimage);
+       listView.setAdapter(adapterclass);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
@@ -58,33 +60,35 @@ public class Team extends Drawerbaseactivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater=getMenuInflater();
+        getMenuInflater().inflate(R.menu.search_menuu,menu);
+        MenuItem menuItem = menu.findItem(R.id.serach_menu);
+        SearchView searchView =(SearchView) menuItem.getActionView();
+        searchView.setQueryHint("Type here to search...");
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+             arrayAdapter.getFilter().filter(s);
+                return false;
+            }
+        });
         inflater.inflate(R.menu.rightmenu,menu);
-        return true;
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id =item.getItemId();
-        if(id==R.id.smenuexit)
-        {
-            AlertDialog.Builder builder =new AlertDialog.Builder(Team.this);
-            builder.setMessage("Do you want to exit? ");
-            builder.setCancelable(true);
-            builder.setNegativeButton("YES", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    finish();
-
-                }
-            });
-            builder.setPositiveButton("NO", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                   dialogInterface.cancel();
-                }
-            });
-            AlertDialog alertDialog= builder.create();
-            alertDialog.show();
+        if(id==R.id.share_menu){
+            Intent sharingIntent = new Intent(Intent.ACTION_SEND);
+            sharingIntent.setType("text/plain");
+            sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, "Check out this cool application");
+            sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Your application link here");
+            startActivity(Intent.createChooser(sharingIntent, "Share Via"));
         }
         return true;
     }
