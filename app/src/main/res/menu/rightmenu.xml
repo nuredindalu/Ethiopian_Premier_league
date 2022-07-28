@@ -9,26 +9,17 @@
     <group android:checkableBehavior="single">
 
         <item
-            android:id="@+id/smenuhome"
+            android:id="@+id/privacy"
             android:checkable="false"
-            android:title="Home" />
+            android:title="@string/privacy" />
         <item
+            android:id="@+id/rateus"
             android:checkable="false"
-            android:title="Language">
-            <menu>
-                <item android:title="Affan Oromo" />
-                <item android:title="Amharic" />
-                <item android:title="English" />
-            </menu>
-        </item>
+            android:title="@string/rateus" />
         <item
-            android:id="@+id/smenusetting"
+            android:id="@+id/moreapp"
             android:checkable="false"
-            android:title="Setting" />
-        <item
-            android:id="@+id/smenuexit"
-            android:checkable="false"
-            android:title="Exit" />
+            android:title="@string/moreapp" />
 
     </group>
 

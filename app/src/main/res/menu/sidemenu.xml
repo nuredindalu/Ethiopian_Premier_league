@@ -4,28 +4,57 @@
 
      <item
          android:id="@+id/smenuhome"
-         android:title="Home"
+         android:title="@string/home"
+         android:icon="@drawable/homeimage"
          />
      <item
          android:id="@+id/steam"
-         android:title="Team"/>
+         android:title="@string/team"
+         android:icon="@drawable/team"/>
      <item
          android:id="@+id/smatches"
-         android:title="Matches"/>
+         android:title="@string/matches"
+         android:icon="@drawable/matchesimage"/>
      <item
          android:id="@+id/sstand"
-         android:title="Standing"/>
+         android:title="@string/standing"
+         android:icon="@drawable/standing"/>
 
  </group>
     <group android:checkableBehavior="single">
-        <item android:title="Language">
+        <item android:title="@string/language">
             <menu>
                 <item
-                    android:title="Affan Oromo"/>
+                    android:id="@+id/affanoro"
+                    android:title="@string/oro"/>
                 <item
-                    android:title="Amharic"/>
-                <item android:title="English"/>
+                    android:id="@+id/affanam"
+                    android:title="@string/am"/>
+                <item
+                    android:id="@+id/english"
+                    android:title="@string/eng"/>
             </menu>
         </item>
+        <item android:title="@string/Contact">
+            <menu>
+                <item
+                    android:id="@+id/Facebook"
+                    android:icon="@drawable/facebookicon"
+                    android:title="@string/facebook"/>
+                <item
+                    android:id="@+id/Telegram"
+                    android:icon="@drawable/tell"
+                    android:title="@string/telegram"/>
+                <item
+                    android:id="@+id/Youtube"
+                    android:icon="@drawable/yout"
+                    android:title="@string/youtube"/>
+            </menu>
+        </item>
+        <item
+            android:id="@+id/smenuexit"
+            android:checkable="false"
+            android:icon="@drawable/ex"
+            android:title="@string/exit" />
     </group>
 </menu>

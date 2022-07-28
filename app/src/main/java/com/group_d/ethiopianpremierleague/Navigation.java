@@ -9,6 +9,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -28,6 +30,11 @@ public class Navigation extends Drawerbaseactivity {
         activityNavigationBinding= ActivityNavigationBinding.inflate(getLayoutInflater());
         allocateactivitytitle("Home");
         setContentView(activityNavigationBinding.getRoot());
+       Resources resources=getResources();
+        String[] disc={resources.getString(R.string.gambella),resources.getString(R.string.bahardar),resources.getString(R.string.adddddddsta),};
+        int[] im={R.drawable.gambelastadium,R.drawable.bada_stadium,R.drawable.addisa};
+        Grid_adapter grid_adapter= new Grid_adapter(Navigation.this,disc,im);
+        activityNavigationBinding.gridview.setAdapter(grid_adapter);
 
     }
     @Override
@@ -42,6 +49,7 @@ public class Navigation extends Drawerbaseactivity {
         int id =item.getItemId();
         if(id==R.id.smenuexit)
         {
+
             AlertDialog.Builder builder =new AlertDialog.Builder(Navigation.this);
             builder.setMessage("Do you want to exit? ");
             builder.setCancelable(true);
@@ -49,7 +57,6 @@ public class Navigation extends Drawerbaseactivity {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
                     finish();
-
                 }
             });
             builder.setPositiveButton("NO", new DialogInterface.OnClickListener() {
@@ -68,6 +75,14 @@ public class Navigation extends Drawerbaseactivity {
             sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Your application link here");
             startActivity(Intent.createChooser(sharingIntent, "Share Via"));
         }
+        if(id==R.id.rateus) {
+            Intent intentp = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/nuredindalu/Ethiopian_Premier_league"));
+            startActivity(intentp);
+        }
+        if(id==R.id.moreapp) {
+            Intent intentpp = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/"));
+            startActivity(intentpp);
+        }
         return true;
     }
 
@@ -79,7 +94,7 @@ public class Navigation extends Drawerbaseactivity {
         }
         else
         {
-            Toast.makeText(getBaseContext(), "Press back again to exit", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getBaseContext(),"Press back again to exit!", Toast.LENGTH_SHORT).show();
         }
         backpressbtn=System.currentTimeMillis();
     }

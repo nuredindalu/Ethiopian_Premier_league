@@ -35,8 +35,8 @@
     <TextView
         android:id="@+id/addrestextview"
         android:layout_width="365dp"
-        android:layout_height="33dp"
-        android:text="address"
+        android:layout_height="34dp"
+        android:text="ethfbleague@gmail.com"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.152"

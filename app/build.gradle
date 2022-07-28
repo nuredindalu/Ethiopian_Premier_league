@@ -17,7 +17,16 @@ android {
     buildFeatures{
         viewBinding true
     }
+    defaultConfig {
+        resConfigs ("en","am","om")
+        applicationId "com.group_d.ethiopianpremierleague"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
 
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
     buildTypes {
         release {
             minifyEnabled false
